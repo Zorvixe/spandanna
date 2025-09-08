@@ -1,4 +1,10 @@
+import { useEffect } from "react"
+
 const Home = () => {
+     useEffect(() => {
+            document.title = "Home | Spandanna Photography"
+        })
+    
     return (
         <>
 
@@ -399,7 +405,7 @@ const Home = () => {
             {/* Team End */}
 
 
-           
+
 
         </>
     )

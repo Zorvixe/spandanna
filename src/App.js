@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 
 import NotFound from "./components/404";
 import About from "./components/about";
@@ -10,33 +10,43 @@ import Service from "./components/service";
 import Team from "./components/team";
 import Navbar from "./components/navbar";
 import Home from "./components/home";
+import Maintaince from "./components/Maintaince";
 
 import './App.css';
+
+function Layout({ children }) {
+  const location = useLocation();
+
+  // hide navbar/footer for /maintaince route
+  const hideLayout = location.pathname === "/maintaince";
+
+  return (
+    <>
+      {!hideLayout && <Navbar />}
+      <div className="App">{children}</div>
+      {!hideLayout && <Footer />}
+    </>
+  );
+}
 
 function App() {
   return (
     <BrowserRouter>
-    <Navbar />
-      <div className="App">
-        {/* Example Navbar / Header could go here */}
-
+      <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/feature" element={<Feature />} />
           <Route path="/about_us" element={<About />} />
           <Route path="/contact_us" element={<Contact />} />
-          <Route path="/feature" element={<Feature />} />
           <Route path="/project" element={<Project />} />
           <Route path="/services" element={<Service />} />
           <Route path="/team" element={<Team />} />
+          <Route path="/maintaince" element={<Maintaince />} />
           
           {/* 404 Page */}
           <Route path="*" element={<NotFound />} />
         </Routes>
-
-        {/* Footer (always visible) */}
-        <Footer />
-      </div>
+      </Layout>
     </BrowserRouter>
   );
 }

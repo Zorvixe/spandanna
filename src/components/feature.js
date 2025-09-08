@@ -1,4 +1,11 @@
+
+import { useEffect } from "react";
+
 const Feature = () => {
+     useEffect(() => {
+            document.title = "Feature | Spandanna Photography"
+        })
+    
     return (
         <div>
             {/* <!-- Header Start --> */}

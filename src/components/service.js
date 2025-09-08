@@ -1,4 +1,9 @@
+import { useEffect } from "react";
 const Service = () => {
+     useEffect(() => {
+            document.title = "Service| Spandanna Photography"
+        })
+    
     return (
         <div>
             {/* !-- Header Start --> */}

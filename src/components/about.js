@@ -1,4 +1,11 @@
+import { useEffect } from "react";
+
 const About = () => {
+
+    useEffect(() => {
+        document.title = "About Us | Spandanna Photography"
+    })
+
     return (
         <div>
             {/* <!-- Header Start --> */}
@@ -105,7 +112,7 @@ const About = () => {
                 </div>
             </div>
             {/* <!-- Facts End --> */}
-  {/* Team Start */}
+            {/* Team Start */}
             <div className="container-xxl px-0 py-5">
                 <div className="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style={{ maxWidth: "500px" }}>
                     <p className="text-primary text-uppercase mb-2">Our Team</p>

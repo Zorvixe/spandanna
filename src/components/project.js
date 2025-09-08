@@ -1,4 +1,11 @@
+import { useEffect
+ } from "react";
+
 const Project = () => {
+     useEffect(() => {
+            document.title = "Project | Spandanna Photography"
+        })
+    
     return (
         <div>
             {/* <!-- Header Start --> */}
@@ -84,9 +91,9 @@ const Project = () => {
                                 <div className="col-12">
                                     <div className="project-item">
                                         <img className="img-fluid" src="img/project-7.jpg" alt="" />
-                                            <a className="project-title h5 mb-0" href="img/project-7.jpg" data-lightbox="project">
-                                                Wedding
-                                            </a>
+                                        <a className="project-title h5 mb-0" href="img/project-7.jpg" data-lightbox="project">
+                                            Wedding
+                                        </a>
                                     </div>
                                 </div>
                                 <div className="col-12">

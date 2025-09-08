@@ -1,4 +1,10 @@
+import { useEffect } from "react";
+
 const Team = () => {
+     useEffect(() => {
+            document.title = "Team | Spandanna Photography"
+        })
+    
     return (
         <div>
             {/* <!-- Header Start --> */}
